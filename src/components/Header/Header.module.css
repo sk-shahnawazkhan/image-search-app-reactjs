@@ -1,0 +1,17 @@
+header {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  padding: 25px;
+  background-image: linear-gradient(45deg, #432b64 40%, #664369 120%);
+}
+
+header h1 {
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+}

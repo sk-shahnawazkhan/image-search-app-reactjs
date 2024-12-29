@@ -1,0 +1,79 @@
+.container {
+  padding: 25px;
+}
+
+.searchBox {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  place-content: center;
+  margin: 25px 0 50px;
+}
+
+.textInput {
+  height: 55px;
+  width: 60%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid grey;
+}
+
+.button {
+  height: 55px;
+  width: auto;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 24px;
+  background-color: #2f80dd;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.item img {
+  vertical-align: middle;
+}
+
+.errorText {
+  font-size: 1.25rem;
+  color: #eb1111;
+}
+
+@media screen and (max-width: 767px) {
+  .item img {
+    margin-bottom: 10px;
+  }
+  .textInput {
+    font-size: 1.25rem;
+    width: 100%;
+  }
+  .button {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .photosContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    place-content: center;
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  .photosContainer .item {
+    flex: 0 0 45%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .photosContainer .item {
+    flex: 0 0 30%;
+  }
+  .textInput {
+    font-size: 2rem;
+  }
+}
