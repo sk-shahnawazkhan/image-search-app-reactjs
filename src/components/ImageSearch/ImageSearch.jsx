@@ -6,6 +6,7 @@ const ImageSearch = () => {
   const [imageTitle, setImageTitle] = useState("");
   const [renderImages, setRenderImages] = useState([]);
   const [hasNoImages, setHasNoImages] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const apiKey = import.meta.env.VITE_IMAGESEARCH_KEY;
 
@@ -20,11 +21,13 @@ const ImageSearch = () => {
     getImages();
   }, []);
 
-  function handleChange(event) {
-    setImageTitle(event.target.value);
+  function handleInputChange(event) {
+    const inputValue = event.target.value;
+    setImageTitle(inputValue);
+    setIsButtonDisabled(inputValue.length === 0);
   }
 
-  function handleSearch() {
+  function handleButtonSearch() {
     getSearchedImages();
   }
 
@@ -50,11 +53,19 @@ const ImageSearch = () => {
             className={styles.textInput}
             name="imageTitle"
             placeholder="Search images"
-            onChange={handleChange}
+            onChange={handleInputChange}
             value={imageTitle}
             id="imageTitle"
           />
-          <button className={styles.button} onClick={handleSearch}>
+          <button
+            className={
+              isButtonDisabled
+                ? `${styles.button} ${styles.buttonDisabled}`
+                : styles.button
+            }
+            onClick={handleButtonSearch}
+            disabled={isButtonDisabled}
+          >
             Search
           </button>
         </div>

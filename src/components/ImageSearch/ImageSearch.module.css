@@ -40,6 +40,11 @@
   color: #eb1111;
 }
 
+.buttonDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 767px) {
   .item img {
     margin-bottom: 10px;
